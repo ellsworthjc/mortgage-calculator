@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mortgage Calculator | Consumer Affairs</title>
+    <link rel="stylesheet" href="main.css">
+  </head>
+  <body>
+	<script src="index.js"></script>
+
+    <header class='header'>
+        <h4 class='header__title'>Mortgage Calculator</h4>
+    </header>
+
+    <main class='calculator'>
+
+      <form class='inputs'>
+          <legend class='inputs__desc'>Change values to calculate your results</legend>
+          <hr>
+          <div class='inputs__group'>                            
+            <label class='inputs__label' for='yearsOfMortgageOutput'>Years of mortgage</label>
+            <div class="inputs__range-group">
+              <p>1</p>
+              <input class='inputs__range' id='yearsOfMortgageRange' name='yearsOfMortgageRange' type='range' min="1" max="40" value='30' oninput='yearsOfMortgageOutput.value=value;handleRangeChange(this)'>
+              <p>40</p>
+              <input class='inputs__output' id='yearsOfMortgageOutput' type="number" min="1" max="40" value='30' oninput='yearsOfMortgageRange.value=value;handleRangeChange(yearsOfMortgageRange)'/>
+            </div>
+          </div>
+
+          <div class='inputs__group'>
+            <label class='inputs__label' for='rateOfInterestOutput'>Rate of interest (%)</label>
+            <div class="inputs__range-group">
+              <p>0.1</p>
+              <input class='inputs__range' id='rateOfInterestRange' name='rateOfInterestRange' type='range' min="0.1" max="10" value='1.8' step="0.1" oninput='rateOfInterestOutput.value=value;handleRangeChange(this)'>
+              <p>10</p>
+              <input class='inputs__output' id='rateOfInterestOutput' type="number" min="0.1" max="10" value='1.8' step="0.1" oninput='rateOfInterestRange.value=value;handleRangeChange(rateOfInterestRange)'/>
+            </div>
+          </div>
+
+          <div class='inputs__group'>
+            <label class='inputs__label' for='loanAmount'>Loan Amount</label>
+            <div class='inputs__input-group'>
+              <p class='inputs__permanent'>$</p>
+              <input class='inputs__input' id='loanAmount' name='loanAmount' type='text' oninput='addCommas(this)' required>
+            </div>
+          </div>
+          
+          <div class='inputs__two-column'>
+            <div class='inputs__group'>
+              <label class='inputs__label' for='annualTax'>Annual Tax</label>
+              <div class='inputs__input-group'>
+                <p class='inputs__permanent'>$</p>
+                <input class='inputs__input' id='annualTax' name='annualTax' type='text' oninput='addCommas(this)' required>
+              </div>
+            </div>
+            
+            <div class='inputs__group'>
+              <label class='inputs__label' for='annualInsurance'>Annual Insurance</label>
+              <div class='inputs__input-group'>
+                <p class='inputs__permanent'>$</p>
+                <input class='inputs__input' id='annualInsurance' name='annualInsurance' type='text' oninput='addCommas(this)' required>
+              </div>
+            </div>
+          </div>
+
+          <button type='button' class='inputs__calculate' onclick="calculateResults()">Calculate</button>
+
+      </form>
+        
+      <section id='results' class='results'>
+          <h5 class='results__heading'>Your results</h5>
+          <div class='results__group'>
+            <p class='results__title'>Principal & Interest</p>
+            <p class='results__result'>$ <span id='piResult'>- -</span></p>
+          </div>
+          <hr class='hide-mobile'>
+          <div class='results__group'>
+            <p class='results__title'>Tax</p>
+            <p class='results__result'>$ <span id='taxResult'>- -</span></p>
+          </div>
+          <hr class='hide-mobile'>
+          <div class='results__group'>
+            <p class='results__title'>Insurance</p>
+            <p class='results__result'>$ <span id='insuranceResult'>- -</span></p>
+          </div>
+          <hr>
+          <div class='results__group'>
+            <p class='results__title results__title--big'>Total Monthly Payment</p>
+            <p class='results__result'>$ <span id='totalResult'>- -</span></p>
+          </div>
+          <hr class='hide-mobile'>
+        </section>
+
+    </main>
+
+
+  </body>
+</html>
