@@ -1,9 +1,64 @@
-@import url(/css/fonts.css);
-@import url(/css/colors.css);
+@font-face {
+    font-family: PublicoBanner;
+    src: url('/assets/fonts/PublicoBanner-Regular-Web.woff2') format('woff2');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: PublicoBanner;
+    src: url('/assets/fonts/PublicoBanner-Medium-Web.woff2') format('woff2');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: PublicoBanner;
+    src: url('/assets/fonts/PublicoBanner-Bold-Web.woff2') format('woff2');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: PublicoHeadline;
+    src: url('/assets/fonts/PublicoHeadline-Medium-Web.woff2') format('woff2');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Graphik;
+    src: url('/assets/fonts/Graphik-Regular-Web.woff2') format('woff2');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: Graphik;
+    src: url('/assets/fonts/Graphik-Medium.woff2') format('woff2');
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: Graphik;
+    src: url('/assets/fonts/Graphik-Semibold-Web.woff2') format('woff2');
+    font-weight: 600;
+}
 
 :root {
     font-size: 16px;
     font-family: 'Graphik', sans-serif;
+
+    --baseWhite: #ffffff;
+    --baseWhite-dark: #fbfcff;
+
+    --primaryBlue: #316eef;
+    --primaryBlue-darkest: #1b3979;
+
+    --baseGray: #bbbcbc;
+    --baseGray-light: #dddddd;
+    --backgroundGray: #fbfbfb;
+
+    --baseBlack: #000000;
+    --baseBlack-light: #2e2f2f;
+    --baseBlack-lighter: #5d5d5d;
+
+    --tertiaryRed: #d83e00;
 }
 
 body {
