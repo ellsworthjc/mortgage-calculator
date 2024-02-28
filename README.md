@@ -1,4 +1,4 @@
 # mortgage-calculator
 Online mortgage calculator with simple design
 
-Viewable at https://mymortgagecalculator.netlify.app/
+Viewable at https://ellsworthjc.github.io/mortgage-calculator/
